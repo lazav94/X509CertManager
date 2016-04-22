@@ -9,11 +9,10 @@ public class KeyGen {
 	//We dont want anyone to create object of this class
 	private KeyGen(){}
 
-	public static KeyPair generatePair(Algorithm alg, int size){
+	public static KeyPair generatePair(Algorithm alg, unsigned int size){
 		try {
 			KeyPairGenerator keyGen = null;
 			keyGen = KeyPairGenerator.getInstance(alg.toString());
-			keyGen.initialize(size);
 			return keyGen.generateKeyPair();
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
@@ -22,11 +21,10 @@ public class KeyGen {
 		return null;
 	}	
 	
-	public static Key generateKey(Algorithm alg, int size){
+	public static Key generateKey(Algorithm alg){
 		try {
 			KeyGenerator keyGen = null;
 			keyGen = KeyGenerator.getInstance(alg.toString());
-			keyGen.init(size);
 			return keyGen.generateKey();
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();

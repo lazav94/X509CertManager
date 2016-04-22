@@ -20,9 +20,17 @@ public class AES {
 	}
 
 	public AES() {
-		key = KeyGen.generateKey(Algorithm.AES, 128);
-		//TODO write key to file
-		encoded = key.getEncoded();
+		//TODO change this to use newly added class
+		KeyGenerator kgen;
+		try {
+			kgen = KeyGenerator.getInstance("AES");
+			kgen.init(128);
+			SecretKey aesKey = kgen.generateKey();
+			key = aesKey;
+			encoded = key.getEncoded();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public String encrypt(String text) {

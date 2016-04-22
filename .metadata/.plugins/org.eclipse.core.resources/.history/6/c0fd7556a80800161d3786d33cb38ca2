@@ -21,7 +21,6 @@ public class AES {
 
 	public AES() {
 		key = KeyGen.generateKey(Algorithm.AES, 128);
-		//TODO write key to file
 		encoded = key.getEncoded();
 	}
 

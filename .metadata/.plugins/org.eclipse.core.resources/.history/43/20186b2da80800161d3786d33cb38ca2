@@ -26,7 +26,6 @@ public class KeyGen {
 		try {
 			KeyGenerator keyGen = null;
 			keyGen = KeyGenerator.getInstance(alg.toString());
-			keyGen.init(size);
 			return keyGen.generateKey();
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
