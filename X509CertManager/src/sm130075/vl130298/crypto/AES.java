@@ -1,37 +1,52 @@
 package sm130075.vl130298.crypto;
+
 import javax.crypto.Cipher;
+
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 
 public class AES {
 	private Key key;
-	private byte[] encoded;
 	private final String ivString = "AAAAAAAAAAAAAAAA";
 
 	public AES(Key key) {
 		this.key = key;
-		encoded = key.getEncoded();
 	}
 
 	public AES() {
-		key = KeyGen.generateKey(Algorithm.AES, 128);
-		//TODO write key to file
-		encoded = key.getEncoded();
+		// See if we already have generated key
+		Path file = Paths.get("storage.config");
+		try {
+			if (Files.exists(file)) {
+				byte[] keyBytes = Files.readAllBytes(file);
+				key = new SecretKeySpec(keyBytes, 0, keyBytes.length, Algorithm.AES.toString());
+			} else {
+				key = KeyGen.generateKey(Algorithm.AES, 128);
+				Files.write(file, key.getEncoded());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	public String encrypt(String text) {
 		try {
 			IvParameterSpec iv = new IvParameterSpec(ivString.getBytes("UTF-8"));
-			SecretKeySpec skeySpec = new SecretKeySpec(encoded, "AES");
 
 			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
-			cipher.init(Cipher.ENCRYPT_MODE, skeySpec, iv);
+			cipher.init(Cipher.ENCRYPT_MODE, key, iv);
 
 			byte[] encrypted = cipher.doFinal(text.getBytes());
 
@@ -46,10 +61,9 @@ public class AES {
 	public String decrypt(String text) {
 		try {
 			IvParameterSpec iv = new IvParameterSpec(ivString.getBytes("UTF-8"));
-			SecretKeySpec skeySpec = new SecretKeySpec(encoded, "AES");
 
 			Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
-			cipher.init(Cipher.DECRYPT_MODE, skeySpec, iv);
+			cipher.init(Cipher.DECRYPT_MODE, key, iv);
 
 			byte[] original = cipher.doFinal(DatatypeConverter.parseBase64Binary(text));
 
@@ -60,12 +74,19 @@ public class AES {
 
 		return null;
 	}
-	/*public static void main(String[] argv){
-		String Avax = "AVAXXXXAVAXXXXAVAXXXXAVAXXXXAVAXXXXAVAXXXXAVAXXXXAVAXXXXAVAXXXXAVAXXXXA\nVAXXXXAVAXXXXAVAXXXXAVAXXXXAVAXXXXAVAXXXXAVAXXXXAVAXXXX";
-		AES aes = new AES();
-		Avax = aes.encrypt(Avax);
-		System.out.println(Avax);
-		Avax = aes.decrypt(Avax);
-		System.out.println(Avax);
+
+/*	public static void main(String[] argv) {
+		Path file = Paths.get("temp.config");
+		try {
+			String s = new String(Files.readAllBytes(file));
+			AES aes = new AES();
+			s = aes.decrypt(s);
+			System.out.println(s);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//Avax = aes.decrypt(Avax);
+		//System.out.println(Avax);
 	}*/
 }
