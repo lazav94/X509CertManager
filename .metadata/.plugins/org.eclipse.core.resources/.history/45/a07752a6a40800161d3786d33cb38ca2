@@ -1,0 +1,12 @@
+import java.security.*;
+import javax.crypto.*;
+
+public class KeyGen {
+	//We dont want anyone to create object of this class
+	private KeyGen(){}
+
+	KeyPair generatePair(){
+		
+	}
+	
+}
