@@ -20,6 +20,12 @@ public class AES {
 	private Key key;
 	private final String ivString = "AAAAAAAAAAAAAAAA";
 
+	//TODO this is hardcoded should be passed by construcotr
+	private final String _path = "keystore.p12";
+	private final String alias = "_AES_2016_X509_";
+	private final String password = "paSSword for A.Es 2016  ";
+	private final String storePw = "storePw";
+			
 	public AES(Key key) {
 		this.key = key;
 	}

@@ -1,7 +1,8 @@
 package sm130075.vl130298.crypto;
 
 public enum Algorithm{
-	AES("AES");
+	AES("AES"),
+	RSAWITHSHA1("SHA1withRSA");
 	
 	String text;
 	

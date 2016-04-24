@@ -1,0 +1,32 @@
+package sm130075.vl130298.crypto;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.security.*;
+
+public class KeyStoreManager {
+	KeyStore keyStore;
+	String path;
+	String password;
+	
+	public KeyStoreManager(String path, String password) {
+		try {
+			this.path = path;
+			this.password = password;
+			FileInputStream fStream = new FileInputStream(path);
+			keyStore = KeyStore.getInstance("pkcs12");
+			keyStore.load(fStream, password.toCharArray());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void storeKey(Key key, String alias, String password) {
+		keyStore.setKeyEntry(alias, key, password.toCharArray(), null);
+		OutputStream writeStream = new FileOutputStream(filePathToStore);
+		keyStore.store(writeStream, this.password.toCharArray());
+		writeStream.close();
+	}
+}
