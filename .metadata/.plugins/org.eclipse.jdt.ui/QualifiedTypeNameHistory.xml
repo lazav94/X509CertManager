@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="javax.xml.bind.DatatypeConverter"/>
-<fullyQualifiedTypeName name="javax.crypto.SecretKey"/>
 <fullyQualifiedTypeName name="Algorithm"/>
 <fullyQualifiedTypeName name="javax.crypto.KeyGenerator"/>
+<fullyQualifiedTypeName name="sm130075.vl130298.crypto.Algorithm"/>
+<fullyQualifiedTypeName name="java.security.KeyStore"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="java.io.OutputStream"/>
+<fullyQualifiedTypeName name="sm130075.vl130298.crypto.KeyStoreManager"/>
+<fullyQualifiedTypeName name="sm130075.vl130298.crypto.AES"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.nio.file.Files"/>
-<fullyQualifiedTypeName name="sm130075.vl130298.crypto.Algorithm"/>
-<fullyQualifiedTypeName name="java.nio.file.Path"/>
 <fullyQualifiedTypeName name="java.nio.file.Paths"/>
+<fullyQualifiedTypeName name="java.nio.file.Path"/>
+<fullyQualifiedTypeName name="javax.crypto.SecretKey"/>
+<fullyQualifiedTypeName name="java.security.KeyStore.ProtectionParameter"/>
+<fullyQualifiedTypeName name="java.net.PasswordAuthentication"/>
+<fullyQualifiedTypeName name="java.security.KeyStore.PasswordProtection"/>
+<fullyQualifiedTypeName name="java.security.KeyStore.SecretKeyEntry"/>
+<fullyQualifiedTypeName name="java.security.cert.CertificateFactorySpi"/>
+<fullyQualifiedTypeName name="javax.security.cert.CertificateNotYetValidException"/>
+<fullyQualifiedTypeName name="javax.security.cert.CertificateExpiredException"/>
+<fullyQualifiedTypeName name="java.security.Principal"/>
+<fullyQualifiedTypeName name="java.security.PublicKey"/>
+<fullyQualifiedTypeName name="java.security.PrivateKey"/>
 </qualifiedTypeNameHistroy>

@@ -15,6 +15,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateFactorySpi;
 
 public class AES {
 	private Key key;
@@ -44,7 +45,6 @@ public class AES {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 	public String encrypt(String text) {
