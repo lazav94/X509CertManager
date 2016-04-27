@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;KeyGen.java&apos; to &apos;sm130075.vl130298.crypto.Algorithm.java&apos;&#x0D;&#x0A;- Original project: &apos;Temp&apos;&#x0D;&#x0A;- Destination element: &apos;sm130075.vl130298.crypto.Algorithm.java&apos;&#x0D;&#x0A;- Original element: &apos;sm130075.vl130298.crypto.KeyGen.java&apos;" description="Copy compilation unit" destination="=X509CertManager/src&lt;sm130075.vl130298.crypto{Algorithm.java" element1="/src&lt;sm130075.vl130298.crypto{KeyGen.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1461608204621" units="1" version="1.0"/>
+</session>
