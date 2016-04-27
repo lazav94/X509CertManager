@@ -3,7 +3,6 @@
 <fullyQualifiedTypeName name="javax.xml.bind.DatatypeConverter"/>
 <fullyQualifiedTypeName name="Algorithm"/>
 <fullyQualifiedTypeName name="javax.crypto.KeyGenerator"/>
-<fullyQualifiedTypeName name="sm130075.vl130298.crypto.Algorithm"/>
 <fullyQualifiedTypeName name="java.security.KeyStore"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
@@ -25,4 +24,17 @@
 <fullyQualifiedTypeName name="java.security.Principal"/>
 <fullyQualifiedTypeName name="java.security.PublicKey"/>
 <fullyQualifiedTypeName name="java.security.PrivateKey"/>
+<fullyQualifiedTypeName name="java.nio.ByteBuffer"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.security.KeyPair"/>
+<fullyQualifiedTypeName name="sm130075.vl130298.crypto.X509CertImpl"/>
+<fullyQualifiedTypeName name="java.security.Signature"/>
+<fullyQualifiedTypeName name="sm130075.vl130298.crypto.Algorithm"/>
+<fullyQualifiedTypeName name="java.security.cert.CertStore"/>
+<fullyQualifiedTypeName name="java.security.PKCS12Attribute"/>
+<fullyQualifiedTypeName name="sun.security.pkcs10.PKCS10Attributes"/>
+<fullyQualifiedTypeName name="sun.security.pkcs10.PKCS10Attribute"/>
+<fullyQualifiedTypeName name="sun.security.pkcs.PKCS9Attribute"/>
+<fullyQualifiedTypeName name="sun.security.util.DerValue"/>
 </qualifiedTypeNameHistroy>
